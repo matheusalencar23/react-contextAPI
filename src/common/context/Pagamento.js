@@ -48,4 +48,4 @@ const usePagamentoContext = () => {
   return { tiposPagamentos, formaPagamento, mudarFormaPagamento };
 };
 
-export { PagamentoContext, PagamentoProvider, usePagamentoContext };
+export { PagamentoProvider, usePagamentoContext };

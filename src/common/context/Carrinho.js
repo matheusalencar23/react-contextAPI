@@ -51,7 +51,7 @@ const useCarrinhoContext = () => {
           novoTotal: contador.novoTotal + produto.valor * produto.quantidade,
         };
       },
-      { novoTotal: 0, novaQuantidade: 0 }
+      { novoTotal: 0, novaQuantidade: 0 },
     );
     setQuantidadesProdutos(novaQuantidade);
     setTotalCarrinho(novoTotal * formaPagamento.juros);
@@ -81,7 +81,7 @@ const useCarrinhoContext = () => {
     const ehOUltimo = produto && produto.quantidade === 1;
     if (ehOUltimo) {
       return setCarrinho((carrinhoAnterior) =>
-        carrinhoAnterior.filter((item) => item.id !== id)
+        carrinhoAnterior.filter((item) => item.id !== id),
       );
     }
     if (produto && produto.quantidade === 0) {
@@ -97,8 +97,8 @@ const useCarrinhoContext = () => {
     removerProduto,
     quantidadeProdutos,
     totalCarrinho,
-    efetuarCompra
+    efetuarCompra,
   };
 };
 
-export { CarrinhoContext, CarrinhoProvider, useCarrinhoContext };
+export { CarrinhoProvider, useCarrinhoContext };
